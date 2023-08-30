@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Register</title>
+	<link th:href="@{/css/register.css}" rel="stylesheet">
+</head>
+
+<body>
+	<h1>新規登録</h1>
+
+	<form class="register" method="post" th:action="@{/register}" th:object="${registerParam}">
+		<label for="name">Name</label>
+		<input type="text" th:field="*{name}" placeholder="(例)ラットプルダウン"  name="name" />
+		<label for="englishName">English Name</label>
+		<input type="text" th:field="*{englishName}" placeholder="(例)Lat_Pull_Down"  name="englishName" />
+		<label for="part">Part</label>
+		<select name="part" th:field="*{part}">
+			<option value="chest">胸</option>
+			<option value="spine">背中</option>
+			<option value="leg">脚</option>
+			<option value="shoulder">肩</option>
+			<option value="arm">腕</option>
+			<option value="abs">腹筋</option>
+		</select>
+		<label for="reps">Reps</label>
+		<input type="text" th:field="*{reps}" placeholder="(例)10"  name="reps" />
+		<label for="set">Set</label>
+		<input type="text" th:field="*{set}" placeholder="(例)3"  name="set" />
+		<p><input class="register_submit" type="submit" value="登録"></p>
+	</form>
+
+	<form method="get" action="/toppage">
+		<input type="submit" value="戻る">
+	</form>
+</body>
+
+</html>

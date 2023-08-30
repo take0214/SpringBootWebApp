@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+@charset "UTF-8";
+
+body {
+	color: #8d8d8d;
+	background-color: #202020;
+}
+
+thead,
+tbody {
+	display: block;
+}
+
+tbody {
+	overflow-y: scroll;
+	height: 350px;
+}
+
+td, th {
+	border: 0px solid;
+	background-color:#303030;
+}
+
+.date {
+	width: 250px;
+	font-size: 20px;
+}
+
+.weight {
+	width: 85px;
+	font-size: 20px;
+}
+

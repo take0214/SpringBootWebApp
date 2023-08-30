@@ -1,10 +1,58 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>Training Memo</title>
+	<meta charset="UTF-8">
+	<title>Training Memo</title>
+	<link th:href="@{/css/toppage.css}" rel="stylesheet">
 </head>
+
 <body>
-<h1>Training Memo</h1>
+	<h1>Training Memo</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th class="name">Name</th>
+				<th class="engname">English Name</th>
+				<th class="part">Part</th>
+				<th class="weight">Max Weight</th>
+				<th class="sets">Reps×Set</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="menu : ${menuList}">
+				<td th:text="${menu.name}" class="name"></td>
+				<td th:text="${menu.englishName}" class="engname"></td>
+				<td th:text="${menu.part}" class="part"></td>
+				<td th:text="${menu.maxWeight}" class="weight"></td>
+				<td th:text="${menu.reps} + '×' + ${menu.set}" class="sets"></td>
+				<td class="do">
+					<form method="get" action="/record">
+						<input type="hidden" name="menu" th:value="${menu.englishName}" />
+						<input class="do" type="submit" value="Do!!">
+					</form>
+				</td>
+				<td class="list">
+					<form method="get" action="/recordlist">
+						<input type="hidden" name="menu" th:value="${menu.englishName}" />
+						<input class="list" type="submit" value="List">
+					</form>
+				</td>
+				<td>
+					<form class="delete" method="get" action="/deletemenu">
+						<input type="hidden" name="menu" th:value="${menu.englishName}" />
+						<input class="delete" type="submit" value="Delete">
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form method="get" action="/register">
+		<input type="submit" value="新規登録">
+	</form>
+
 </body>
+
 </html>
