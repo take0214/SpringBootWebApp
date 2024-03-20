@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Record</title>
+	<link th:href="@{/css/record.css}" rel="stylesheet">
+</head>
+
+<body>
+	<h1>Record</h1>
+	<div class="record_form">
+		<form class="previous" method="get" action="/record/previous">
+			<input type="hidden" name="menu" th:value="${menu}" />
+			<input type="hidden" name="date" th:value="${date}" />
+			<input class="date_button" type="submit" value="prev">
+		</form>
+		<p class="date" th:text="${date}"></p>
+		<form class="next" method="get" action="/record/next">
+			<input type="hidden" name="menu" th:value="${menu}" />
+			<input type="hidden" name="date" th:value="${date}" />
+			<input class="date_button" type="submit" value="next">
+		</form>
+
+	<p class="weight_text">Today's Weight</p>
+
+	<form method="post" action="/record">
+		<input type="hidden" name="menu" th:value="${menu}" />
+		<input type="hidden" name="date" th:value="${date}" />
+		<input class"weight_form" type="text" placeholder="(例)10" name="weight">
+
+		<p><input class="submit" type="submit" value="Submit!"></p>
+	</form>
+	</div>
+
+	<form method="get" action="/toppage">
+		<input class="back" type="submit" value="戻る">
+	</form>
+
+</body>
+
+</html>

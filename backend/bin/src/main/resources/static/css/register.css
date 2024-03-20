@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+body {
+	color: #8d8d8d;
+	background-color: #202020;
+}
+
+form.register{
+	text-align: center;
+}
+
+label{
+	display: block;
+	font-size: 30px;
+}
+
+input[type="text"] {
+	font-size: 20px;
+	width: 100px;
+}
+
+input[type="submit"] {
+	font-size: 30px;
+	width: 100px;
+}
+
+
+
+
+
+
+
