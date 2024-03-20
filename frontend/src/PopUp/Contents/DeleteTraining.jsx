@@ -1,10 +1,11 @@
 import axios from "axios";
+import config from '../../config';
 
 export default function DeleteTraining({ targetData, setPopUp }) {
 
     function deleteTraining(id) {
 
-        return axios.get(`http://localhost:8080/delete-training?id=${id}`).then((response) => {
+        return axios.get(`${config.API_URL}/delete-training?id=${id}`).then((response) => {
             console.dir(response.data)
             return response.data
         }).catch(error => {

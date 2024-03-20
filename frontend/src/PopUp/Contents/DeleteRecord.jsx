@@ -1,10 +1,11 @@
 import axios from "axios";
+import config from '../../config';
 
 export default function DeleteRecord({ targetData, targetRecord, setPopUp }) {
 
     function deleteRecord(id) {
 
-        return axios.get(`http://localhost:8080/delete-record?id=${id}`).then((response) => {
+        return axios.get(`${config.API_URL}/delete-record?id=${id}`).then((response) => {
             console.dir(response.data)
             return response.data
         }).catch(error => {

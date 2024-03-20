@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import config from '../config';
 
 export default function RecordList({ targetData, setTableName, setTargetRecord, popUp, setPopUp }) {
     const [data, setData] = useState([]);
 
     function getTraining() {
-        return axios.get(`http://localhost:8080/record?id=${targetData.id}`).then((response) => {
+        return axios.get(`${config.API_URL}/record?id=${targetData.id}`).then((response) => {
             console.dir(response.data)
             return response.data
         }).catch(error => {

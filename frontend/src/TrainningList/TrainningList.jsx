@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
+import config from '../config';
 
 import {BodyPart, changeJp} from '../constant/BodyPart'
 
@@ -8,7 +9,7 @@ export default function TrainningList({ setTableName, setTargetData, popUp, setP
     const [data, setData] = useState([]);
 
     function getTraining() {
-        return axios.get(`http://localhost:8080/training`).then((response) => {
+        return axios.get(`${config.API_URL}/training`).then((response) => {
             console.dir(response.data)
             return response.data
         }).catch(error => {

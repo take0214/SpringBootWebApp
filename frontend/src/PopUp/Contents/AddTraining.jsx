@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { BodyPart, changeJp } from "../../constant/BodyPart";
 import axios from "axios";
+import config from '../../config';
 
 export default function AddTraining({ setPopUp }) {
     const [content, setContent] = useState('form');
@@ -19,7 +20,7 @@ export default function AddTraining({ setPopUp }) {
         params.append('name', data.name);
         params.append('bodyPart', data.part);
 
-        return axios.post(`http://localhost:8080/training`, params,).then((response) => {
+        return axios.post(`${config.API_URL}/training`, params,).then((response) => {
             console.dir(response.data)
             return response.data
         }).catch(error => {

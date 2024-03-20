@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import axios from "axios";
+import config from '../../config';
 
 export default function AddRecord({ targetData, setPopUp }) {
     const [content, setContent] = useState('form');
@@ -29,7 +30,7 @@ export default function AddRecord({ targetData, setPopUp }) {
         params.append('reps', formData.reps);
         params.append('trainingId', targetData.id);
 
-        return axios.post(`http://localhost:8080/record`, params,).then((response) => {
+        return axios.post(`${config.API_URL}/record`, params,).then((response) => {
             console.dir(response.data)
             return response.data
         }).catch(error => {
