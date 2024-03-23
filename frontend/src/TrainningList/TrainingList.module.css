@@ -1,0 +1,59 @@
+.buttonArea {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.button {
+    display: inline-block;
+
+    color: black;
+    text-align: center;
+
+    width: 13.4%;
+    padding: 1px;
+    margin: 3px;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.tName {
+    width: 30%;
+}
+
+.tMaxWeight {
+    width: 10%;
+}
+
+.tLastDay {
+    width: 20%;
+}
+
+.tBodyPart {
+    width: 7%;
+}
+
+.tRecord {
+    width: 7%;
+}
+
+.tDelete {
+    width: 7%;
+}
+
+.tWorkout {
+    width: 20%;
+}
+
+td.tWorkout {
+    color: black;
+    background-color: greenyellow;
+}
+
+.addTrainingButton {
+    color: black;
+    background-color: lightgray;
+    padding: 4px;
+    margin-top: 8px;
+    text-align: center;
+
+}

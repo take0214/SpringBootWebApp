@@ -1,3 +1,5 @@
+import styles from '../PopUp.module.css'
+
 import axios from "axios";
 import config from '../../config';
 
@@ -17,7 +19,7 @@ export default function DeleteRecord({ targetData, targetRecord, setPopUp }) {
 
     return (
         <>
-            <div id="content">
+            <div className={styles.content}>
                 <p>{targetRecord.date}の{targetData.name}の記録を削除します。よろしいですか？</p>
                 <button onClick={async() => {
                     await deleteRecord(targetRecord.id)

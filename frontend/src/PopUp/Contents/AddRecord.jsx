@@ -1,3 +1,5 @@
+import styles from '../PopUp.module.css'
+
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import axios from "axios";
@@ -56,7 +58,7 @@ export default function AddRecord({ targetData, setPopUp }) {
 
         return (
             <>
-                <div id="content">
+                <div className={styles.content}>
                     <p>{targetData.name}のワークアウトを登録</p>
                     <form onSubmit={handleSubmit(onSubmit, onError)}>
 
@@ -91,7 +93,7 @@ export default function AddRecord({ targetData, setPopUp }) {
     } else if (content === 'confirm') {
         return (
             <>
-                <div id="content">
+                <div className={styles.content}>
                     <p>以下の内容で登録してよろしいですか？</p>
                     <p>日付：{formatDate(formData.date)}、重量：{formData.weight}、レップ数：{formData.reps}</p>
                     <button onClick={async() => {

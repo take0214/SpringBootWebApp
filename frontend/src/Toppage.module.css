@@ -1,0 +1,8 @@
+.toppage {
+    display: block;
+}
+
+.button {
+    display: inline-block;
+    width: 14%;
+}

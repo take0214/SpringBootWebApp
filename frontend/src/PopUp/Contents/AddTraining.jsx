@@ -1,3 +1,5 @@
+import styles from '../PopUp.module.css'
+
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { BodyPart, changeJp } from "../../constant/BodyPart";
@@ -45,7 +47,7 @@ export default function AddTraining({ setPopUp }) {
     if (content === 'form') {
         return (
             <>
-                <div id="content">
+                <div className={styles.content}>
                     <p>トレーニング新規登録フォーム</p>
                     <form onSubmit={handleSubmit(onSubmit, onError)}>
                         <p>
@@ -75,7 +77,7 @@ export default function AddTraining({ setPopUp }) {
     } else if (content === 'confirm') {
         return (
             <>
-                <div id="content">
+                <div className={styles.content}>
                     <p>以下の内容で登録してよろしいですか？</p>
                     <p>トレーニング名:{formData.name}, 部位:{changeJp(formData.part)}</p>
                     <button onClick={async () => {

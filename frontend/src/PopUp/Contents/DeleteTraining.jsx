@@ -1,3 +1,5 @@
+import styles from '../PopUp.module.css'
+
 import axios from "axios";
 import config from '../../config';
 
@@ -17,7 +19,7 @@ export default function DeleteTraining({ targetData, setPopUp }) {
 
     return (
         <>
-            <div id="content">
+            <div className={styles.content}>
                 <p>{targetData.name}のデータを削除します。よろしいですか？</p>
                 <button onClick={async () => {
                         await deleteTraining(targetData.id)

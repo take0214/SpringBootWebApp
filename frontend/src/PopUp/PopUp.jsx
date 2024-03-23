@@ -1,4 +1,4 @@
-import "react-datepicker/dist/react-datepicker.css"
+import styles from './PopUp.module.css'
 
 import AddTraining from "./Contents/AddTraining"
 import AddRecord from "./Contents/AddRecord"
@@ -14,7 +14,7 @@ export default function PopUp({ targetData, targetRecord, popUp, setPopUp }) {
     } else if (popUp === 'training') {
         return (
             <>
-                <div id="overlay">
+                <div className={styles.popUp}>
                     <AddTraining setPopUp={setPopUp} />
                 </div>
             </>
@@ -22,7 +22,7 @@ export default function PopUp({ targetData, targetRecord, popUp, setPopUp }) {
     } else if (popUp === 'workout') {
         return (
             <>
-                <div id="overlay">
+                <div className={styles.popUp}>
                     <AddRecord targetData={targetData} setPopUp={setPopUp} />
                 </div>
             </>
@@ -30,7 +30,7 @@ export default function PopUp({ targetData, targetRecord, popUp, setPopUp }) {
     } else if (popUp === 'delete_training') {
         return (
             <>
-                <div id="overlay">
+                <div className={styles.popUp}>
                     <DeleteTraining targetData={targetData} setPopUp={setPopUp} />
                 </div>
             </>
@@ -38,7 +38,7 @@ export default function PopUp({ targetData, targetRecord, popUp, setPopUp }) {
     } else if (popUp === 'delete_record') {
         return (
             <>
-                <div id="overlay">
+                <div className={styles.popUp}>
                     <DeleteRecord targetData={targetData} targetRecord={targetRecord} setPopUp={setPopUp} />
                 </div>
             </>
